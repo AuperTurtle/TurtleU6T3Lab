@@ -66,21 +66,23 @@ public class ArrayAlgorithms {
     }
 
     public static int longestStreak(int[] nums) {
-        int tempCounter = 0;
-        int counter = 0;
+        int tempCounter = 1;
+        int counter = 1;
 
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] == nums[i + 1]) {
                 tempCounter++;
-                if (tempCounter > counter) {
+                if (tempCounter >= counter) {
                     counter = tempCounter;
                 }
             }   else   {
-                tempCounter = 0;
+                tempCounter = 1;
             }
         }
         return counter;
     }
+
+
 
 
 }
